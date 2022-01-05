@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {  useState } from 'react';
+import {Route , Switch } from "react-router-dom"
 
-function App() {
+
+//components
+import Landing from './components/Landing';
+import LogIn from './components/register/LogIn';
+import SingInForm from './components/register/SingInForm';
+
+//styles
+import "./app.scss"
+
+const App = () => {
+  const [email , setEmail]= useState("");
+
+  // const [localStorageEmail , setLocalStorageEmail] = useState("")
+  // const userEmail = localStorage.setItem("USEREMAIL", JSON.stringify(email));
+  // const userParsedEmail= JSON.parse( localStorage.getItem("USEREMAIL"));
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <div>
+        <Switch>
+          <Route path="/log-in" render={props => <LogIn setEmail={setEmail} email={email}  {...props}/>} />
+          <Route path="/sign-in" component={SingInForm} />
+          <Route path="/" render={props => <Landing {...props}/>}/>
+        </Switch>
+      </div>  
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,23 @@
+.cryptoContainer{
+    .header{
+        text-align: center;
+    }
+    .searchDiv{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .searchInput{
+            padding: 15px;
+            border-radius: 15px;
+            border: solid gray 1px;
+            outline: none;
+            width: 350px;
+            height: 40px;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+    }
+    .table{
+        border: 1px solid gray;
+    }
+}

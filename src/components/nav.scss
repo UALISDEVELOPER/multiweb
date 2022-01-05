@@ -1,0 +1,23 @@
+.nav{
+    background-color: #1a1a1a;
+    margin-bottom: 40px;
+    .navLink{
+        // background-color: brown;
+        height: 50px;
+        font-size: 20px;
+        transition: all .5s;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        .logOutBtn{
+            color: red;
+        }
+    }
+    .navLink:hover{
+        background-color: #000000;
+    }
+    .userEmail{
+        font-size: small;
+        color: white;
+    }
+}
