@@ -41,24 +41,24 @@ const WebNav = () => {
                 <Nav.Link href="/sign-in">
                     {JSON.parse(localStorage.getItem("USEREMAIL2")) ?
                     <div className='registerDiv'>
-                        <img src={singInIcon} alt="logout icon"/>
-                        <p>sign in/ log in</p>
-                    </div>
-                    :
-                    <div className='registerDiv'>
                         <img src={logOutIcon} alt="logout icon"/>
                         <p onClick={logOutHnadler} className='logOutBtn'>log out</p> 
                     </div>
+                    :
+                    <div className='registerDiv'>
+                        <img src={singInIcon} alt="logout icon"/>
+                        <p>sign in/ log in</p>
+                    </div>
                     }
                 </Nav.Link>
-                <Nav.Link className='userLink'>
-                    <div className='userDiv'>
-                        {/* {JSON.parse(localStorage.getItem("USEREMAIL2")) && <p className='userEmail'>{JSON.parse(localStorage.getItem("USEREMAIL2"))}</p>}  */}
-                        <img src={userIcon} alt="userIcon"/>
-                        <p className='userEmail'>ali03528695@gmail.com</p>
-                    </div>
-                    
-                </Nav.Link>
+                {JSON.parse(localStorage.getItem("USEREMAIL2")) &&
+                    <Nav.Link className='userLink'>
+                        <div className='userDiv'>
+                            <img src={userIcon} alt="userIcon"/>
+                            <p className='userEmail'>{JSON.parse(localStorage.getItem("USEREMAIL2"))}</p>
+                        </div>
+                    </Nav.Link>
+                }
                 </Nav>
             </Navbar.Collapse>
             </Container>
