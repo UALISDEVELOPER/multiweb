@@ -35,7 +35,7 @@ const SingInForm = () => {
 
     const nameInputRef = useRef();
     useEffect(()=>{
-        document.title = "website name /sign up";
+        // document.title = "website name /sign up";
         // setting title of the page
         nameInputRef.current.focus();
         // focus on first input during componenet mounting

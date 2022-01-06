@@ -17,6 +17,7 @@ const Landing = () => {
                 <Route path="/crypto" component={Crypto} />
                 <Route path="/weather" component={Weather}/>
             </Switch>
+            
         </div>
     );
 };

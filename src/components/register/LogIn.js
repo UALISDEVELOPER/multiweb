@@ -26,7 +26,7 @@ const LogIn = ({setEmail, email ,history}) => {
     // const [userEmail, setUserEmail] = useState(false)
 
     useEffect(()=>{
-        document.title = "website name /log in";
+        // document.title = "website name /log in";
         // setting title of the page
         firstInput.current.focus();
         // focus on first input during componenet mounting

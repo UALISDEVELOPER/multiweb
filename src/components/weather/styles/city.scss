@@ -44,7 +44,8 @@
         border-radius: 15px;
         .time{
             float: right;
-            margin-right: 10px;
+            width: fit-content;
+            margin-right: 50px;
             img{
                 float: left;
                 margin-top: 12px;
@@ -58,6 +59,7 @@
         }
         .date{
             float: left;
+            width: fit-content;
             img{
                 float: left;
                 margin-top: 10px;
