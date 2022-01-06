@@ -71,11 +71,11 @@ const LogIn = ({setEmail, email ,history}) => {
 
         if( !(errors.email || errors.password ) ){
             axios.post("https://api.freerealapi.com/auth/login", logInData)
-                    // .then(response => console.log(JSON.parse(response.config.data)))
+                    // .then(response => console.log(response))
                     .then(response=>setEmail(JSON.parse(response.config.data).email))
                     // .catch((error)=>setErrors({...errors, serverError: error.response.data.message}))
                     .catch(error => fail(error.response.data.message))
-                    // .catch((error)=>console.log(error.response.data.message))
+                    .catch((error)=>console.log(error.response.data.message))
             // console.log("success");
             
         }else{
@@ -129,7 +129,7 @@ const LogIn = ({setEmail, email ,history}) => {
                         <Link to="/sign-in"><button className="signUpBtn">sign up</button></Link> 
                     </li>
                     <li>
-                        <Link to="/crypto">go to home page</Link>
+                        <Link to="/">go to home page</Link>
                     </li>
                 </ul>    
             </form>

@@ -1,10 +1,9 @@
 import React from 'react';
 import {Route , Switch} from "react-router-dom";
 
-import Navbar from './Nav';
+// import Navbar from './Nav';
+import WebNav from './WebNav';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Placeholder} from 'react-bootstrap';
 
 import Crypto from './crypto/Crypto';
 import Weather from './weather/Weather';
@@ -13,7 +12,8 @@ const Landing = () => {
 
     return (
         <div>
-            <Navbar/>
+            {/* <Navbar/> */}
+            <WebNav/>
             <Switch>
                 <Route path="/crypto" component={Crypto} />
                 <Route path="/weather" component={Weather}/>

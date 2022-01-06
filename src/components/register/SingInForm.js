@@ -169,7 +169,7 @@ const SingInForm = () => {
                         <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
                     </li>
                     <li>
-                        <Link to="/crypto">go to home page</Link>
+                        <Link to="/">go to home page</Link>
                     </li>
                 </ul>    
                     

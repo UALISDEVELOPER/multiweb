@@ -1,24 +1,44 @@
 .nav{
-    background-color: #d80000;
-    // background-color: #1a1a1a;
-    margin-bottom: 40px;
-    .navLink{
-        // background-color: brown;
-        height: 50px;
-        font-size: 20px;
-        transition: all .5s;
-        outline: none;
-        border: none;
-        border-radius: 10px;
+    background-color: #000000 !important;
+    .navBrand{
+        color: #02027e;
+        
+    }
+    .pagesLink{
+        color: #ffffff !important;
+    }
+    .pagesLink:hover{
+        color: #979797 !important;
+    }
+    .registerDiv{
+        margin-top: 10px;
         .logOutBtn{
-            color: red;
+            color: #ff0000;
+            // transition: all .5s;
+        }
+        .logOutBtn:hover{
+            color: #ff3434;
+        }
+        p{
+            float: left;
+        }
+        img{
+            float: left;
+            margin-right: 5px;
         }
     }
-    .navLink:hover{
-        background-color: #000000;
-    }
-    .userEmail{
-        font-size: small;
-        color: white;
+    .userLink{
+        cursor: context-menu;
+        .userDiv{
+            margin-top: 10px;
+            p{
+                color: #0000ff;
+                float: left;
+            }
+            img{
+                float: left;
+                margin-right: 5px;
+            }
+        }
     }
 }
