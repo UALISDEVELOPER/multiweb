@@ -30,10 +30,10 @@ const Crypto = () => {
     const filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
 
     return (
-        <div>
+        <div className='cryptoFillContainer'>
             <Container fluid="md" className='cryptoContainer'>
                     <div className='header'>
-                        <h2 >Top 200 cryptocurrency prices</h2>
+                        <h1 >Top 200 cryptocurrency</h1>
                     </div>
                     <div className='searchDiv'>
                         <input className='searchInput' type="text" placeholder="Search cryptocurrency name ..." value={search} onChange={searchHandler}/>

@@ -59,7 +59,9 @@ const Weather = () => {
 
     return (
         <div className='main'>
-            <h2>Weather forecast</h2>
+            <div className='headerDiv'>
+                <h1>Weather forecast</h1>
+            </div>
             <div className='weatherContainer'>
                 <div>
                     <div className='searchBox'>

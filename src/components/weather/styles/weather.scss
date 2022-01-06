@@ -1,7 +1,14 @@
 .main{
     text-align: center;
-    h2{
-        margin-bottom: 25px;
+    .headerDiv{
+        margin: auto;
+        background-color: #ffffffb7;
+        width: fit-content;
+        h1{
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 5px #02027e;
+            margin-top: 20px;
+        }
     }
     .weatherContainer{
         width: 350px;

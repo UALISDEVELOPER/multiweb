@@ -21,7 +21,7 @@ const WebNav = () => {
 
     return (
         <div>
-            <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
             <Container>
             <Navbar.Brand className='navBrand' href="/">Multi web</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
