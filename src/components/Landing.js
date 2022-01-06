@@ -12,7 +12,6 @@ const Landing = () => {
 
     return (
         <div>
-            {/* <Navbar/> */}
             <WebNav/>
             <Switch>
                 <Route path="/crypto" component={Crypto} />

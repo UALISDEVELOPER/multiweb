@@ -27,7 +27,7 @@ const Crypto = () => {
         setSearch(event.target.value)
     }
 
-    const filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    const filtered = data.filter(item => item.name.toLowerCase().includes(search.toLowerCase().trim()))
 
     return (
         <div className='cryptoFillContainer'>

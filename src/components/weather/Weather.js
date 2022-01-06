@@ -35,7 +35,7 @@ const Weather = () => {
 
 
     const apiKEY = "213e1b10d0a8c32ba08147337ce2de65";
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKEY}&units=metric`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${search.trim()}&appid=${apiKEY}&units=metric`;
 
 
     const clickHandler = ()=>{
