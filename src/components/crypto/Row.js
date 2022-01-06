@@ -26,7 +26,7 @@ const Row = ({ symbol, name , image, price , cap , priceChange}) => {
             </td>
             <td>
                 <p>
-                ${priceChange}
+                ${Math.round(priceChange)}
                 </p>
             </td>
             <td>

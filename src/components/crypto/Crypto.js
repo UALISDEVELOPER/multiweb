@@ -38,28 +38,30 @@ const Crypto = () => {
                     <div className='searchDiv'>
                         <input className='searchInput' type="text" placeholder="Search cryptocurrency name ..." value={search} onChange={searchHandler}/>
                     </div>
-                    <Table striped bordered hover variant="dark" className='table'>
-                        <thead>
-                            <tr>
-                                <th>Coin</th>
-                                <th>Symbol</th>
-                                <th>Price</th>
-                                <th>price change 24h</th>
-                                <th>Market cap</th>
-                            </tr>
-                        </thead>
-                        
-                            {data.length? 
-                                    
-                                    <tbody>
-                                    {filtered.map(item => <Row key={item.id} symbol={item.symbol} name={item.name} image={item.image} price={item.current_price} cap={item.market_cap} priceChange={item.price_change_24h}/> )}
-                                    </tbody> 
-                                    :
-                                    
-                                    <RowPlaceholder />
-                            }
-                        
-                    </Table>
+                    <div className='tableDiv'>
+                        <Table responsive striped bordered hover variant="dark" className='table'>
+                            <thead>
+                                <tr>
+                                    <th>Coin</th>
+                                    <th>Symbol</th>
+                                    <th>Price</th>
+                                    <th>price change 24h</th>
+                                    <th>Market cap</th>
+                                </tr>
+                            </thead>
+                            
+                                {data.length? 
+                                        
+                                        <tbody>
+                                        {filtered.map(item => <Row key={item.id} symbol={item.symbol} name={item.name} image={item.image} price={item.current_price} cap={item.market_cap} priceChange={item.price_change_24h}/> )}
+                                        </tbody> 
+                                        :
+                                        
+                                        <RowPlaceholder />
+                                }
+                            
+                        </Table>
+                    </div>
                 
             </Container>
         </div>
