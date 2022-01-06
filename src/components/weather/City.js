@@ -91,13 +91,13 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
                 <div>
                     <div className='maxTemp'>
                         <img src={upArrow} alt="up icon"/>
-                        <p>{Math.round(maxTemp)} °C</p>
+                        <p><span>max temp </span>: {Math.round(maxTemp)} °C</p>
                     </div>
                 </div>
                 <div>
                     <div className='minTemp'>
                         <img src={downArrow} alt="down icon"/>
-                        <p>{Math.round(minTemp)} °C</p>
+                        <p><span>min temp </span>: {Math.round(minTemp)} °C</p>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@
             margin-top: -30px;
         }
         .tempDiv{
-            padding-left: 97px;
+            padding-left: 130px;
             margin-top: -10px;
             .temperature{
                 float: left;
@@ -41,6 +41,7 @@
         height: 50px;
         background-color: #2a2ab4;
         color: white;
+        border-radius: 15px;
         .time{
             float: right;
             margin-right: 10px;
@@ -73,8 +74,10 @@
     .moreInfo{
         width: fit-content;
         height: 110px;
-        float: left;
+        float: right;
         font-size: 17px;
+        padding-top: 3px;
+        // border: 2px solid yellow;
         .humidityDiv{
             width: fit-content;
             float: left;
@@ -111,12 +114,12 @@
     .moreInfo2{
         width: fit-content;
         height: 110px;
-        float: right;
+        float: left;
         font-size: 17px;
         padding-right: 5px;
         img{
             float: left;
-            margin-top: 12px;
+            margin-top: 15px;
             margin-left: 5px;
         }
         p{
@@ -125,7 +128,7 @@
             margin-top: 15px;
             margin-right: 10px;
             span{
-                font-size: 11px;
+                font-size: 14px;
             }
         }
     }

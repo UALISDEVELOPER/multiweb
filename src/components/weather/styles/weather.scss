@@ -7,18 +7,19 @@
         h1{
             margin-bottom: 25px;
             text-shadow: 3px 3px 5px #02027e;
-            margin-top: 20px;
+            margin-top: 100px;
         }
     }
     .weatherContainer{
-        width: 350px;
+        width: 400px;
         height: 500px;
         margin: auto;
         padding: 15px;
-        background-color: #2b2b2b;
+        background-color: #212529;
         // background-color: #d40000;
         color: #ffffff;
-        box-shadow: 0px 0px 18px 20px #4b4b4b96;
+        box-shadow: 0px 5px 42px 5px #000000;
+        border-radius: 15px;
         .searchBox{
             display: flex;
             align-items: center;
@@ -32,6 +33,7 @@
                 border: solid gray 1px;
                 outline: none;
                 font-size: x-large;
+                border-radius: 15px;
             }
     
         }
@@ -49,6 +51,7 @@
                 border: none;
                 cursor: pointer;
                 transition: all .5s;
+                border-radius: 15px;
             }
             button:hover{
                 background-color: #217421;
