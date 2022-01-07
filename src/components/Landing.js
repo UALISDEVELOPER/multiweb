@@ -18,8 +18,8 @@ const Landing = () => {
             <Switch>
                 <Route path="/crypto" component={Crypto} />
                 <Route path="/weather" component={Weather}/>
+                <Route path="/" component={Homepage}/>
             </Switch>
-            <Homepage/>
             <Footer/>
         </div>
     );

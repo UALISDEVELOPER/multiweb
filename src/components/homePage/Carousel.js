@@ -13,7 +13,7 @@ import "./styles/carousel.scss"
 
 const CarouselComponent = () => {
     return (
-        <Container fluid="md">
+        <div>
             <Row>
                 <Col>
                     <Carousel className='carousel' variant="dark" controls={false} touch={true} interval={3000}>
@@ -34,7 +34,7 @@ const CarouselComponent = () => {
                     </Carousel> 
                 </Col>
             </Row>
-        </Container>
+        </div>
 
         
     );
