@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route , Switch} from "react-router-dom";
 
-// import Navbar from './Nav';
+//navbar and footer components
 import WebNav from './WebNav';
+import Footer from './Footer';
 
-
+//components
 import Crypto from './crypto/Crypto';
 import Weather from './weather/Weather';
+import Homepage from './homePage/Homepage';
 
 const Landing = () => {
 
@@ -17,7 +19,8 @@ const Landing = () => {
                 <Route path="/crypto" component={Crypto} />
                 <Route path="/weather" component={Weather}/>
             </Switch>
-            
+            <Homepage/>
+            <Footer/>
         </div>
     );
 };
