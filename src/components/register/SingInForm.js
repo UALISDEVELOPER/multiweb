@@ -160,7 +160,7 @@ const SingInForm = () => {
                                         
                                     </li>
                                     <li>
-                                        <label>confirm password:</label>
+                                        <label className='confirm'>confirm password:</label>
                                         <input type="password" name="confirmPassword" value={data.confirmPassword} onChange={valueHandler} onFocus={touchedHandler}/><br/>
                                         {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>} <br/>
                                         

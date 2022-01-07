@@ -10,7 +10,13 @@
         text-align: center;
         padding-top: 5px;
         border-top: #c0c0c0 2px solid;
+        // border: brown 2px solid;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
         .name{
+            margin-top: 15px;
             font-size: 25px;
             margin-bottom: 8px;
         }
@@ -18,11 +24,20 @@
             margin-top: -30px;
         }
         .tempDiv{
-            padding-left: 130px;
+            // padding-left: 130px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
             margin-top: -10px;
+            // border: blue 2px solid;
+            img{
+                float: left;
+                // margin-right: 5px;
+            }
             .temperature{
                 float: left;
-                margin-top: 0px;
+                margin-top: 15px;
                 font-size: 30px;
                 margin-right: 3px;
             }
@@ -30,9 +45,6 @@
                 font-size: 20px;
                 float: left;
                 margin-top: 0px;
-            }
-            img{
-                float: left;
             }
         }
     }
@@ -42,10 +54,9 @@
         background-color: #2a2ab4;
         color: white;
         border-radius: 15px;
-        .time{
-            float: right;
-            width: fit-content;
-            margin-right: 50px;
+        margin-top: 10px;
+        .innerTimeDiv{
+            width: 100%;
             img{
                 float: left;
                 margin-top: 12px;
@@ -57,32 +68,18 @@
                 margin-top: 13px;
             }
         }
-        .date{
-            float: left;
-            width: fit-content;
-            img{
-                float: left;
-                margin-top: 10px;
-                margin-left: 5px;
-            }
-            p{
-                float: left;
-                margin-left: 5px;
-                margin-top: 10px;
-            }
-        }
-
+    }
     }
     .moreInfo{
-        width: fit-content;
-        height: 110px;
-        float: right;
-        font-size: 17px;
-        padding-top: 3px;
-        // border: 2px solid yellow;
-        .humidityDiv{
-            width: fit-content;
-            float: left;
+        width: 100%;
+        height: 50px;
+        // background-color: #2a2ab4;
+        color: white;
+        border-radius: 15px;
+        margin-top: 10px;
+        // font-size: 15px;
+        .innerWeatherDiv{
+            width: 100%;
             img{
                 float: left;
                 margin-top: 12px;
@@ -94,47 +91,7 @@
                 margin-top: 13px;
             }
         }
-        .windDiv{
-            width: fit-content;
-            float: left;
-            margin-right: 5px;
-            img{
-                float: left;
-                margin-top: 12px;
-                margin-left: 5px;
-            }
-            p{
-                float: left;
-                margin-left: 5px;
-                margin-top: 13px;
-                span{
-                    font-size: 11px;
-                }
-            }
-        }
     }
-    .moreInfo2{
-        width: fit-content;
-        height: 110px;
-        float: left;
-        font-size: 17px;
-        padding-right: 5px;
-        img{
-            float: left;
-            margin-top: 15px;
-            margin-left: 5px;
-        }
-        p{
-            float: left;
-            margin-left: 5px;
-            margin-top: 15px;
-            margin-right: 10px;
-            span{
-                font-size: 14px;
-            }
-        }
-    }
-}
 .forecastDiv::-webkit-scrollbar {
     display: none;
 }

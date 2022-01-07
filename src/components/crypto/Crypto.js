@@ -6,7 +6,7 @@ import Row from "./Row"
 import RowPlaceholder from './RowPlaceholder';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Table , row } from 'react-bootstrap';
+import { Container, Table  } from 'react-bootstrap';
 //styles
 import "./styles/crypto.scss"
 
@@ -51,12 +51,10 @@ const Crypto = () => {
                             </thead>
                             
                                 {data.length? 
-                                        
                                         <tbody>
                                         {filtered.map(item => <Row key={item.id} symbol={item.symbol} name={item.name} image={item.image} price={item.current_price} cap={item.market_cap} priceChange={item.price_change_24h}/> )}
                                         </tbody> 
                                         :
-                                        
                                         <RowPlaceholder />
                                 }
                             

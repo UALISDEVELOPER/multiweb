@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 //styles
 import "./styles/city.scss"
 
-
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Image, Container, Row, Col} from 'react-bootstrap';
 
 //icons
 import tempIcon from "./styles/img/tempicon/2x/icon2.png"
@@ -54,52 +56,62 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
     return (
         <div className='forecastDiv'>
             <div className='mainInfoDiv'>
-                <p className='name'>{name},{country}</p>
-                <p>{description}</p>
-                <img src={image} alt='image' className='icon'/>
-                <div className='tempDiv'>
-                    <img src={tempIcon} alt="temp-icon"/>
-                    <p className='temperature'>{Math.round(temp)}</p>
-                    <span className='metric'>°C</span>
+                <div>
+                    <p className='name'>{name},{country}</p>
+                    <p>{description}</p>
+                    <img src={image} alt='image' className='icon'/>
+                    <div className='tempDiv'>
+                        <img src={tempIcon} alt="temp-icon"/>
+                        <p className='temperature'>{Math.round(temp)}</p>
+                        <span className='metric'>°C</span>
+                    </div>
                 </div>
             </div>
             <div className='dateAndTime'>
-                <div className='time'>
-                    <img src={clockIcon} alt="clock icon"/>
-                    <p>{houre} : {minutes}</p>
-                </div>
-                <div className='date'>
-                    <img src={todayIcon} alt="calender icon"/>
-                    <p>{day} , {month+1}/{date}/{year}</p>
-                </div>
+                <Row className='dataRow'>
+                    <Col>
+                        <div className='innerTimeDiv'>
+                            <img src={clockIcon} alt="clock icon"/>
+                            <p>{houre} : {minutes}</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className='innerTimeDiv'>
+                            <img src={todayIcon} alt="calender icon"/>
+                            <p>{day} , {month+1}/{date}/{year}</p>
+                        </div>
+                    </Col>
+                </Row>
             </div>
             <div className='moreInfo'>
-                <div>
-                    <div className='humidityDiv'>
-                        <img src={dropIcon} alt="drop icon"/>
-                        <p>humidity : {humidity}%</p>
-                    </div>
-                </div>
-                <div>
-                    <div className='windDiv'>
-                        <img src={windIcon} alt="wind icon"/>
-                        <p>wind speed : {wind} <span>km/h</span></p>
-                    </div>
-                </div>
-            </div>
-            <div className='moreInfo2'>
-                <div>
-                    <div className='maxTemp'>
-                        <img src={upArrow} alt="up icon"/>
-                        <p><span>max temp </span>: {Math.round(maxTemp)} °C</p>
-                    </div>
-                </div>
-                <div>
-                    <div className='minTemp'>
-                        <img src={downArrow} alt="down icon"/>
-                        <p><span>min temp </span>: {Math.round(minTemp)} °C</p>
-                    </div>
-                </div>
+                <Row className='dataRow'>
+                    <Col>
+                        <div className='innerWeatherDiv'>
+                            <img src={upArrow} alt="up icon"/>
+                            <p><span>max temp </span>: {Math.round(maxTemp)} °C</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className='innerWeatherDiv'>
+                            <img src={dropIcon} alt="drop icon"/>
+                            <p>humidity : {humidity}%</p>
+                        </div>
+                    </Col>
+                </Row>
+                <Row className='dataRow'>
+                    <Col>
+                        <div className='innerWeatherDiv'>
+                            <img src={downArrow} alt="down icon"/>
+                            <p><span>min temp </span>: {Math.round(minTemp)} °C</p>
+                        </div>
+                    </Col>
+                    <Col>
+                        <div className='innerWeatherDiv'>
+                            <img src={windIcon} alt="wind icon"/>
+                            <p>wind speed : {wind} <span>km/h</span></p>
+                        </div>
+                    </Col>
+                </Row>
             </div>
         </div>
     );

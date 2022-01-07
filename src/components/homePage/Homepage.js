@@ -10,7 +10,7 @@ const Homepage = () => {
     return (
         <div>
             <CarouselComponent/>
-            <FirstRow/>
+            <FirstRow />
             <Devices/>
             <SeconRow/>
         </div>

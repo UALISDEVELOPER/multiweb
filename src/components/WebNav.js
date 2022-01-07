@@ -47,7 +47,7 @@ const WebNav = () => {
                     </div>
                     :
                     <div className='registerDiv'>
-                        <img src={singInIcon} alt="logout icon"/>
+                        <img src={singInIcon} alt="sign in icon"/>
                         <p>sign in/ log in</p>
                     </div>
                     }

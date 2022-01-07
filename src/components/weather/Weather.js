@@ -16,7 +16,7 @@ import weatherIllustration from "./styles/img/Weather.gif"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col , Container} from 'react-bootstrap';
 
 const Weather = () => {
 
@@ -65,17 +65,17 @@ const Weather = () => {
 
 
     return (
-        <div className='main'>
+        <Container lg className='main'>
             <div className='headerDiv'>
                 <h1>Weather forecast</h1>
             </div>
             <Row className="justify-content-md-center">
-                        <Col md="auto">
+                        <Col lg={6}>
                             <div className='imageDiv'>
                                 <Image fluid className='image' src={weatherIllustration} alt="weather illustration"/>
                             </div>
                         </Col>
-                        <Col md="auto">
+                        <Col lg={6}>
                             <div className='weatherContainer'>
                                 <div>
                                     <div className='searchBox'>
@@ -104,7 +104,7 @@ const Weather = () => {
                     draggable
                     pauseOnHover
             />
-        </div>
+        </Container>
     );
 };
 
