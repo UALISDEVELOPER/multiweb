@@ -69,13 +69,13 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
             </div>
             <div className='dateAndTime'>
                 <Row className='dataRow'>
-                    <Col md={4}>
+                    <Col sm={4}>
                         <div className='innerTimeDiv'>
                             <img src={clockIcon} alt="clock icon"/>
                             <p>{houre} : {minutes}</p>
                         </div>
                     </Col>
-                    <Col md={8}>
+                    <Col sm={8}>
                         <div className='innerTimeDiv'>
                             <img src={todayIcon} alt="calender icon"/>
                             <p>{day} , {month+1}/{date}/{year}</p>
@@ -85,30 +85,31 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
             </div>
             <div className='moreInfo'>
                 <Row className='dataRow'>
-                    <Col>
+                    <Col sm={6}>
                         <div className='innerWeatherDiv'>
                             <img src={upArrow} alt="up icon"/>
                             <p><span>max temp </span>: {Math.round(maxTemp)} °C</p>
                         </div>
                     </Col>
-                    <Col>
+                    <Col sm={6}>
+                        <div className='innerWeatherDiv'>
+                            <img src={downArrow} alt="down icon"/>
+                            <p><span>min temp </span>: {Math.round(minTemp)} °C</p>
+                        </div>
+                        
+                    </Col>
+                </Row>
+                <Row className='dataRow'>
+                    <Col sm={6}>
                         <div className='innerWeatherDiv'>
                             <img src={dropIcon} alt="drop icon"/>
                             <p>humidity : {humidity}%</p>
                         </div>
                     </Col>
-                </Row>
-                <Row className='dataRow'>
-                    <Col>
-                        <div className='innerWeatherDiv'>
-                            <img src={downArrow} alt="down icon"/>
-                            <p><span>min temp </span>: {Math.round(minTemp)} °C</p>
-                        </div>
-                    </Col>
-                    <Col>
+                    <Col sm={6}>
                         <div className='innerWeatherDiv'>
                             <img src={windIcon} alt="wind icon"/>
-                            <p>wind speed : {wind} <span>km/h</span></p>
+                            <p>wind : {wind} <span>km/h</span></p>
                         </div>
                     </Col>
                 </Row>
