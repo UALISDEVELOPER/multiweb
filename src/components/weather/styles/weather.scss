@@ -10,9 +10,17 @@
             margin-top: 100px;
         }
     }
+    .imageDiv{
+        margin: auto;
+        margin-top: 0px;
+        width: fit-content;
+        .image{
+            width:500px;
+        }
+    }
     .weatherContainer{
         width: 400px;
-        height: 530px;
+        height: 510px;
         margin: auto;
         padding: 15px;
         background-color: #212529;

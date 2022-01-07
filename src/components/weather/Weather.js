@@ -11,6 +11,13 @@ import "./styles/weather.scss"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+//images
+import weatherIllustration from "./styles/img/Weather.gif"
+
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Image, Container, Row, Col} from 'react-bootstrap';
+
 const Weather = () => {
 
     const [weatherData, setWeatherData] = useState([]);
@@ -62,19 +69,28 @@ const Weather = () => {
             <div className='headerDiv'>
                 <h1>Weather forecast</h1>
             </div>
-            <div className='weatherContainer'>
-                <div>
-                    <div className='searchBox'>
-                        <input className='searchInput' type="text" placeholder="Search a city" value={search} onChange={searchHandler} onKeyDown={EnterHandler} />
-                    </div>
-                    <div className='buttonBox'>
-                        <button onClick={clickHandler}>Search</button>
-                    </div>
-                </div>
-                {load&&
-                    <City name={weatherData.name} country={weatherData.sys.country} temp={weatherData.main.temp} description={weatherData.weather[0].description} icon={weatherData.weather[0].icon} sunRise={weatherData.sys.sunrise} sunSet={weatherData.sys.sunset} humidity={weatherData.main.humidity} wind={weatherData.wind.speed} minTemp={weatherData.main.temp_min} maxTemp={weatherData.main.temp_max} />
-                }
-            </div>
+            <Row className="justify-content-md-center">
+                        <Col md="auto">
+                            <div className='imageDiv'>
+                                <Image fluid className='image' src={weatherIllustration} alt="weather illustration"/>
+                            </div>
+                        </Col>
+                        <Col md="auto">
+                            <div className='weatherContainer'>
+                                <div>
+                                    <div className='searchBox'>
+                                        <input className='searchInput' type="text" placeholder="Search a city" value={search} onChange={searchHandler} onKeyDown={EnterHandler} />
+                                    </div>
+                                    <div className='buttonBox'>
+                                        <button onClick={clickHandler}>Search</button>
+                                    </div>
+                                </div>
+                                {load&&
+                                    <City name={weatherData.name} country={weatherData.sys.country} temp={weatherData.main.temp} description={weatherData.weather[0].description} icon={weatherData.weather[0].icon} sunRise={weatherData.sys.sunrise} sunSet={weatherData.sys.sunset} humidity={weatherData.main.humidity} wind={weatherData.wind.speed} minTemp={weatherData.main.temp_min} maxTemp={weatherData.main.temp_max} />
+                                }
+                            </div>  
+                        </Col>
+                </Row>
 
 
             <ToastContainer

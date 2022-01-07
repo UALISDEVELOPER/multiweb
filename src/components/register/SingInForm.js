@@ -134,7 +134,7 @@ const SingInForm = () => {
             <Row className="justify-content-md-center">
                         <Col md="auto">
                             <div className='imageDiv'>
-                                <Image fluid roundedCircle className='image' src={signupIllustrations} alt="log in "/>
+                                <Image fluid className='image' src={signupIllustrations} alt="log in "/>
                             </div>
                         </Col>
                         <Col md="auto">

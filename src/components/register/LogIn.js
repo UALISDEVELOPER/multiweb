@@ -119,7 +119,7 @@ const LogIn = ({setEmail, email ,history}) => {
                 <Row className="justify-content-md-center">
                         <Col md="auto">
                             <div className='imageDiv'>
-                                <Image fluid roundedCircle className='image' src={loginIllustrations} alt="log in "/>
+                                <Image fluid className='image' src={loginIllustrations} alt="log in "/>
                             </div>
                         </Col>
                         <Col md="auto">
