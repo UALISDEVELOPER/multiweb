@@ -5,13 +5,13 @@ import "./styles/city.scss"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
 //icons
 import tempIcon from "./styles/img/tempicon/2x/icon2.png"
 import clockIcon from "./styles/img/clockIcon/1x/clock.png"
 import todayIcon from "./styles/img/todayIcon/1x/today.png"
-import dropIcon from "./styles/img/dropIcon/1x/drop.png"
+import dropIcon from "./styles/img/dropIcon/1x/drop.png" 
 import windIcon from "./styles/img/windIcon/1x/wind.png"
 import upArrow from "./styles/img/arrowUpIcon/1x/up.png"
 import downArrow from "./styles/img/arrowDownIcon/1x/down.png"
@@ -49,6 +49,9 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
           break;
         case 6:
             setDay( "Saturday");
+          break;
+        default:
+            setDay("not detected");
       };
     },[])
 
@@ -59,7 +62,7 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
                 <div>
                     <p className='name'>{name},{country}</p>
                     <p>{description}</p>
-                    <img src={image} alt='image' className='icon'/>
+                    <img src={image} alt='icon' className='icon'/>
                     <div className='tempDiv'>
                         <img src={tempIcon} alt="temp-icon"/>
                         <p className='temperature'>{Math.round(temp)}</p>
@@ -69,13 +72,13 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
             </div>
             <div className='dateAndTime'>
                 <Row className='dataRow'>
-                    <Col sm={4}>
+                    <Col sm={6}>
                         <div className='innerTimeDiv'>
                             <img src={clockIcon} alt="clock icon"/>
                             <p>{houre} : {minutes}</p>
                         </div>
                     </Col>
-                    <Col sm={8}>
+                    <Col sm={6}>
                         <div className='innerTimeDiv'>
                             <img src={todayIcon} alt="calender icon"/>
                             <p>{day} , {month+1}/{date}/{year}</p>

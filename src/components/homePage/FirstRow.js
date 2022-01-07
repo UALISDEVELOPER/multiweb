@@ -8,7 +8,7 @@ import firstRowImage from "./img/WeatherRow.gif"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col} from 'react-bootstrap';
 
 const FirstRow = () => {
     return (

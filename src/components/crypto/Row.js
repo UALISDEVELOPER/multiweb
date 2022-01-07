@@ -12,7 +12,7 @@ const Row = ({ symbol, name , image, price , cap , priceChange}) => {
     return (
         <tr>
             <td>
-                <img className="image" src={image}/> <p>{name}</p>
+                <img className="image" src={image} alt="cryptocurency logo"/> <p>{name}</p>
             </td>
             <td>
                 <p>

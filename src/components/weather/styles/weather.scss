@@ -32,6 +32,12 @@
             align-items: center;
             justify-content: center;
             padding-bottom:10px ;
+            position: relative;
+            .searchIcon{
+                position: absolute;
+                left: 0px;
+                transition: all .5s;
+            }
             .searchInput{
                 text-align: center;
                 width: 100%;
@@ -42,7 +48,23 @@
                 font-size: x-large;
                 border-radius: 15px;
             }
+            ::placeholder{
+                color: #000000;
+                font-size: larger;
+                text-align: center;
+                transition: all .5s;
+            }
     
+        }
+        .searchBoxAnimation{
+            .searchIcon{
+                left: 90%;
+            }
+            ::placeholder{
+                color: #1d295f;
+                font-size: larger;
+                text-align: center;
+            }
         }
         .buttonBox{
             display: flex;

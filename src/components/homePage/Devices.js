@@ -3,7 +3,7 @@ import React from 'react';
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import {Image, Row, Col} from 'react-bootstrap';
 
 //images
 import devices from "./img/devices.png";

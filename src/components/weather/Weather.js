@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 //components
 import City from './City';
@@ -12,7 +12,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 //images
-import weatherIllustration from "./styles/img/Weather.gif"
+import weatherIllustration from "./styles/img/Weather.gif";
+import searchIcon from "./styles/img/searchIcon/2x/search.png"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -32,7 +33,7 @@ const Weather = () => {
 
     useEffect(()=>{
         weatherData.length === 0 ? setLoad(false) : setLoad(true);
-    })
+    },[weatherData])
 
     const EnterHandler = (e)=>{
         if(e.key==="Enter"){
@@ -52,6 +53,12 @@ const Weather = () => {
             .catch((error)=>fail(error.response.data.message))
     }
 
+    // const searchIcon = useRef(null);
+
+    const animationHandler =()=>{
+        let searchBox = document.getElementById("searchBox");
+        searchBox.classList.toggle("searchBoxAnimation");
+    }
 
     const fail =(message)=>toast.error(message, {
         position: "top-right",
@@ -65,7 +72,7 @@ const Weather = () => {
 
 
     return (
-        <Container lg className='main'>
+        <Container lg="true" className='main'>
             <div className='headerDiv'>
                 <h1>Weather forecast</h1>
             </div>
@@ -78,8 +85,9 @@ const Weather = () => {
                         <Col lg={6}>
                             <div className='weatherContainer'>
                                 <div>
-                                    <div className='searchBox'>
-                                        <input className='searchInput' type="text" placeholder="Search a city" value={search} onChange={searchHandler} onKeyDown={EnterHandler} />
+                                    <div className='searchBox' id="searchBox">
+                                        <Image src={searchIcon} alt="search icon" className='searchIcon'/>
+                                        <input className='searchInput' type="text" placeholder="Search a city" value={search} onChange={searchHandler} onKeyDown={EnterHandler} onClick={animationHandler} />
                                     </div>
                                     <div className='buttonBox'>
                                         <button onClick={clickHandler}>Search</button>

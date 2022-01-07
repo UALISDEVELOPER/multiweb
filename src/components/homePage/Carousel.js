@@ -2,7 +2,7 @@ import React from 'react';
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Carousel, Container, Row,Col} from 'react-bootstrap';
+import {Carousel, Row,Col} from 'react-bootstrap';
 
 //images
 import headerWeather from "./img/headerImage.png";
