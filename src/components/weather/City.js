@@ -69,13 +69,13 @@ const City = ({name, country, temp, description, icon, sunRise, sunSet, humidity
             </div>
             <div className='dateAndTime'>
                 <Row className='dataRow'>
-                    <Col>
+                    <Col md={4}>
                         <div className='innerTimeDiv'>
                             <img src={clockIcon} alt="clock icon"/>
                             <p>{houre} : {minutes}</p>
                         </div>
                     </Col>
-                    <Col>
+                    <Col md={8}>
                         <div className='innerTimeDiv'>
                             <img src={todayIcon} alt="calender icon"/>
                             <p>{day} , {month+1}/{date}/{year}</p>

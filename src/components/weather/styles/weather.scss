@@ -20,15 +20,13 @@
         }
     }
     .weatherContainer{
-        // width: 400px;
-        height: 540px;
         margin: auto;
         padding: 15px;
         background-color: #212529;
-        // background-color: #d40000;
         color: #ffffff;
         box-shadow: 0px 5px 42px 5px #000000;
         border-radius: 15px;
+        height: fit-content;
         .searchBox{
             display: flex;
             align-items: center;
