@@ -27,6 +27,7 @@ const WebNav = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
+                <Nav.Link className='pagesLink' href="/">Home</Nav.Link>
                 <Nav.Link className='pagesLink' href="/crypto">Crypto</Nav.Link>
                 <Nav.Link className='pagesLink' href="/weather">Weather</Nav.Link>
                 {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
