@@ -117,17 +117,77 @@ const LogIn = ({setEmail, email ,history}) => {
     return (
         <Container fluid="md">
                 <Row className="justify-content-md-center">
-                        <Col md="auto">
+                        <Col md={6}>
                             <div className='imageDiv'>
                                 <Image fluid className='image' src={loginIllustrations} alt="log in "/>
                             </div>
                         </Col>
-                        <Col md="auto">
+                        <Col md={6}>
                                 <div className="logInContainer">
-                                    <div className='formDiv'>
+                                    <div>
                                         <form>
                                             <h1>log in</h1>
-                                            <ul>
+                                            <div  className='formDiv'>
+                                                <Row>
+                                                    <Col sm={6}>
+                                                        <label>email :</label>
+                                                    </Col>
+                                                    <Col sm={6}>
+                                                        <Row>
+                                                            <input type="email" name="email" value={clientData.email} onChange={changeHandler} onFocus={touchHandler} ref={firstInput} />
+                                                        </Row>
+                                                        <Row>
+                                                            <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col sm={6}>
+                                                        <label>password :</label>
+                                                    </Col>
+                                                    <Col sm={6}>
+                                                        <Row>
+                                                            <input type="password" name="password" value={clientData.password} onChange={changeHandler} onFocus={touchHandler}/>
+                                                        </Row>
+                                                        <Row>
+                                                            <span>{errors.password && touched.password && <p>{errors.password}</p>} </span>
+                                                        </Row>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col xs={6}>
+                                                        <button onClick={logInHandler} className="logInBtn">log in</button>
+                                                    </Col>
+                                                    <Col xs={6}>
+
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col xs={8}>
+                                                        <p>don't have an account?</p>
+                                                    </Col>
+                                                    <Col xs={4}>
+
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col xs={6}>
+                                                        <Link to="/sign-in"><button className="signUpBtn">sign up</button></Link> 
+                                                    </Col>
+                                                    <Col xs={6}>
+
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col xs={8}>
+                                                        <Link to="/">go to home page</Link>
+                                                    </Col>
+                                                    <Col xs={4}>
+                                                        
+                                                    </Col>
+                                                </Row>
+                                            </div>
+                                            {/* <ul>
                                                 <li>
                                                     <label>email :</label>
                                                     <input type="email" name="email" value={clientData.email} onChange={changeHandler} onFocus={touchHandler} ref={firstInput} /><br/>   
@@ -149,7 +209,7 @@ const LogIn = ({setEmail, email ,history}) => {
                                                 <li>
                                                     <Link to="/">go to home page</Link>
                                                 </li>
-                                            </ul>    
+                                            </ul>     */}
                                         </form>
                                     </div>
                             </div>
