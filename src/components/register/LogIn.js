@@ -117,12 +117,12 @@ const LogIn = ({setEmail, email ,history}) => {
     return (
         <Container fluid="md">
                 <Row className="justify-content-md-center">
-                        <Col md={6}>
+                        <Col md="auto">
                             <div className='imageDiv'>
                                 <Image fluid className='image' src={loginIllustrations} alt="log in "/>
                             </div>
                         </Col>
-                        <Col md={6}>
+                        <Col md="auto">
                                 <div className="logInContainer">
                                     <div>
                                         <form>
@@ -187,29 +187,6 @@ const LogIn = ({setEmail, email ,history}) => {
                                                     </Col>
                                                 </Row>
                                             </div>
-                                            {/* <ul>
-                                                <li>
-                                                    <label>email :</label>
-                                                    <input type="email" name="email" value={clientData.email} onChange={changeHandler} onFocus={touchHandler} ref={firstInput} /><br/>   
-                                                    {errors.email && touched.email && <span>{errors.email}</span>} 
-                                                </li>   
-                                                <li>
-                                                    <label>password :</label>
-                                                    <input type="password" name="password" value={clientData.password} onChange={changeHandler} onFocus={touchHandler}/><br/>
-                                                    {errors.password && touched.password && <span>{errors.password}</span>}  
-                                                </li>
-                                                {errors.serverError && <span>*{errors.serverError}*</span>}    
-                                                <li className="buttonLi">
-                                                    <button onClick={logInHandler} className="logInBtn">log in</button>
-                                                    <br/>
-                                                    <br/>
-                                                    <p>don't have an account?</p>
-                                                    <Link to="/sign-in"><button className="signUpBtn">sign up</button></Link> 
-                                                </li>
-                                                <li>
-                                                    <Link to="/">go to home page</Link>
-                                                </li>
-                                            </ul>     */}
                                         </form>
                                     </div>
                             </div>

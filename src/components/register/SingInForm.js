@@ -140,7 +140,106 @@ const SingInForm = () => {
                         <Col md="auto">
                         <div className="signInContainer">
                                 <h1>sign up</h1>
-                                <ul>
+                                <div  className='formDiv'>
+                                    <Row>
+                                        <Col sm={6}>
+                                            <label>user name :</label>
+                                        </Col>
+                                        <Col sm={6}>
+                                            <Row>
+                                                <input type="text" name="name" value={data.name} onChange={valueHandler} onFocus={touchedHandler} ref={nameInputRef}/>
+                                            </Row>
+                                            <Row>
+                                                <span>{errors.name && touched.name && <p>{errors.name}</p>} </span>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={6}>
+                                            <label>email :</label>
+                                        </Col>
+                                        <Col sm={6}>
+                                            <Row>
+                                                <input type="email" name="email" value={data.email} onChange={valueHandler} onFocus={touchedHandler}/>
+                                            </Row>
+                                            <Row>
+                                                <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={6}>
+                                            <label>password :</label>
+                                        </Col>
+                                        <Col sm={6}>
+                                            <Row>
+                                                <input type="password" name="password" value={data.password} onChange={valueHandler} onFocus={touchedHandler}/>
+                                            </Row>
+                                            <Row>
+                                                <span>{errors.password && touched.password && <p>{errors.password}</p>}</span>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col sm={6}>
+                                            <label className='confirm'>confirm password :</label>
+                                        </Col>
+                                        <Col sm={6}>
+                                            <Row>
+                                                <input type="password" name="confirmPassword" value={data.confirmPassword} onChange={valueHandler} onFocus={touchedHandler}/>
+                                            </Row>
+                                            <Row>
+                                                <span>{errors.confirmPassword && touched.confirmPassword && <p>{errors.confirmPassword}</p>}</span>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={6}>
+                                            <label>accept terms of privacy :</label>
+                                        </Col>
+                                        <Col xs={6}>
+                                            <Row>
+                                                <input className="checkbox" type="checkbox" name="agreement" value={data.agreement} onClick={checkBoxHandler} onFocus={touchedHandler}/>
+                                            </Row>
+                                            <Row>
+                                                <span className='agreementSpan'> {errors.agreementError && touched.agreement && <p>{errors.agreementError}</p>}</span>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={6}>
+                                            <button className="signUpBtn" onClick={signUpHandler}>sign up</button>
+                                        </Col>
+                                        <Col xs={6}>
+
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={8}>
+                                            <p>already have an account?</p>
+                                        </Col>
+                                        <Col xs={4}>
+
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={6}>
+                                            <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
+                                        </Col>
+                                        <Col xs={4}>
+
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col xs={6}>
+                                            <Link to="/">go to home page</Link>
+                                        </Col>
+                                        <Col xs={4}>
+
+                                        </Col>
+                                    </Row>
+                                </div>
+                                {/* <ul>
                                     <li>
                                         <label>user name:</label>
                                         <input type="text" name="name" value={data.name} onChange={valueHandler} onFocus={touchedHandler} ref={nameInputRef}/><br/>
@@ -171,7 +270,6 @@ const SingInForm = () => {
                                         {errors.agreementError && touched.agreement && <span>{errors.agreementError}</span>}
                                         
                                     </li>
-                                    {/* {errors.serverError && <span>*{errors.serverError}*</span>}   */}
 
                                     <br/>
 
@@ -186,7 +284,7 @@ const SingInForm = () => {
                                     <li>
                                         <Link to="/">go to home page</Link>
                                     </li>
-                                </ul>        
+                                </ul>         */}
                         </div>
                         </Col>
                 </Row>
