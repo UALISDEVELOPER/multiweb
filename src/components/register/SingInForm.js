@@ -40,13 +40,13 @@ const SingInForm = () => {
     //use setTouched to know if client has clicked on any input
     //------------------------------------------------
 
-    const nameInputRef = useRef();
-    useEffect(()=>{
-        // document.title = "website name /sign up";
-        // setting title of the page
-        nameInputRef.current.focus();
-        // focus on first input during componenet mounting
-    },[])
+    // const nameInputRef = useRef();
+    // useEffect(()=>{
+    //     // document.title = "website name /sign up";
+    //     // setting title of the page
+    //     nameInputRef.current.focus();
+    //     // focus on first input during componenet mounting
+    // },[])
     
     useEffect(()=>{
         setErrors(validate(data));
@@ -138,154 +138,108 @@ const SingInForm = () => {
                             </div>
                         </Col>
                         <Col md="auto">
-                        <div className="signInContainer">
-                                <h1>sign up</h1>
-                                <div  className='formDiv'>
-                                    <Row>
-                                        <Col sm={6}>
-                                            <label>user name :</label>
-                                        </Col>
-                                        <Col sm={6}>
-                                            <Row>
-                                                <input type="text" name="name" value={data.name} onChange={valueHandler} onFocus={touchedHandler} ref={nameInputRef}/>
-                                            </Row>
-                                            <Row>
-                                                <span>{errors.name && touched.name && <p>{errors.name}</p>} </span>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col sm={6}>
-                                            <label>email :</label>
-                                        </Col>
-                                        <Col sm={6}>
-                                            <Row>
-                                                <input type="email" name="email" value={data.email} onChange={valueHandler} onFocus={touchedHandler}/>
-                                            </Row>
-                                            <Row>
-                                                <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col sm={6}>
-                                            <label>password :</label>
-                                        </Col>
-                                        <Col sm={6}>
-                                            <Row>
-                                                <input type="password" name="password" value={data.password} onChange={valueHandler} onFocus={touchedHandler}/>
-                                            </Row>
-                                            <Row>
-                                                <span>{errors.password && touched.password && <p>{errors.password}</p>}</span>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col sm={6}>
-                                            <label className='confirm'>confirm password :</label>
-                                        </Col>
-                                        <Col sm={6}>
-                                            <Row>
-                                                <input type="password" name="confirmPassword" value={data.confirmPassword} onChange={valueHandler} onFocus={touchedHandler}/>
-                                            </Row>
-                                            <Row>
-                                                <span>{errors.confirmPassword && touched.confirmPassword && <p>{errors.confirmPassword}</p>}</span>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs={6}>
-                                            <label>accept terms of privacy :</label>
-                                        </Col>
-                                        <Col xs={6}>
-                                            <Row>
-                                                <input className="checkbox" type="checkbox" name="agreement" value={data.agreement} onClick={checkBoxHandler} onFocus={touchedHandler}/>
-                                            </Row>
-                                            <Row>
-                                                <span className='agreementSpan'> {errors.agreementError && touched.agreement && <p>{errors.agreementError}</p>}</span>
-                                            </Row>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs={6}>
-                                            <button className="signUpBtn" onClick={signUpHandler}>sign up</button>
-                                        </Col>
-                                        <Col xs={6}>
+                            <div className="signInContainer">
+                                    <h1>sign up</h1>
+                                    <div  className='formDiv'>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label>user name :</label>
+                                            </Col>
+                                            <Col sm={6}>
+                                                <Row>
+                                                    <input type="text" name="name" value={data.name} onChange={valueHandler} onFocus={touchedHandler}/>
+                                                </Row>
+                                                <Row>
+                                                    <span>{errors.name && touched.name && <p>{errors.name}</p>} </span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label>email :</label>
+                                            </Col>
+                                            <Col sm={6}>
+                                                <Row>
+                                                    <input type="email" name="email" value={data.email} onChange={valueHandler} onFocus={touchedHandler}/>
+                                                </Row>
+                                                <Row>
+                                                    <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label>password :</label>
+                                            </Col>
+                                            <Col sm={6}>
+                                                <Row>
+                                                    <input type="password" name="password" value={data.password} onChange={valueHandler} onFocus={touchedHandler}/>
+                                                </Row>
+                                                <Row>
+                                                    <span>{errors.password && touched.password && <p>{errors.password}</p>}</span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label className='confirm'>confirm password :</label>
+                                            </Col>
+                                            <Col sm={6}>
+                                                <Row>
+                                                    <input type="password" name="confirmPassword" value={data.confirmPassword} onChange={valueHandler} onFocus={touchedHandler}/>
+                                                </Row>
+                                                <Row>
+                                                    <span>{errors.confirmPassword && touched.confirmPassword && <p>{errors.confirmPassword}</p>}</span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <label>accept terms of privacy :</label>
+                                            </Col>
+                                            <Col xs={6}>
+                                                <Row>
+                                                    <input className="checkbox" type="checkbox" name="agreement" value={data.agreement} onClick={checkBoxHandler} onFocus={touchedHandler}/>
+                                                </Row>
+                                                <Row>
+                                                    <span className='agreementSpan'> {errors.agreementError && touched.agreement && <p>{errors.agreementError}</p>}</span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <button className="signUpBtn" onClick={signUpHandler}>sign up</button>
+                                            </Col>
+                                            <Col xs={6}>
 
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs={8}>
-                                            <p>already have an account?</p>
-                                        </Col>
-                                        <Col xs={4}>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={8}>
+                                                <p>already have an account?</p>
+                                            </Col>
+                                            <Col xs={4}>
 
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs={6}>
-                                            <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
-                                        </Col>
-                                        <Col xs={4}>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
+                                            </Col>
+                                            <Col xs={6}>
 
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col xs={6}>
-                                            <Link to="/">go to home page</Link>
-                                        </Col>
-                                        <Col xs={4}>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <Link to="/">go to home page</Link>
+                                            </Col>
+                                            <Col xs={6}>
 
-                                        </Col>
-                                    </Row>
+                                            </Col>
+                                        </Row>
+                                    </div>
                                 </div>
-                                {/* <ul>
-                                    <li>
-                                        <label>user name:</label>
-                                        <input type="text" name="name" value={data.name} onChange={valueHandler} onFocus={touchedHandler} ref={nameInputRef}/><br/>
-                                        {errors.name && touched.name && <span>{errors.name}</span>} <br/>
-                                        
-                                    </li>
-                                    <li>
-                                        <label>email:</label>
-                                        <input type="email" name="email" value={data.email} onChange={valueHandler} onFocus={touchedHandler}/><br/>
-                                        {errors.email && touched.email && <span>{errors.email}</span>} <br/>
-                                        
-                                    </li>
-                                    <li>
-                                        <label>password:</label>
-                                        <input type="password" name="password" value={data.password} onChange={valueHandler} onFocus={touchedHandler}/><br/>
-                                        {errors.password && touched.password && <span>{errors.password}</span>} <br/>
-                                        
-                                    </li>
-                                    <li>
-                                        <label className='confirm'>confirm password:</label>
-                                        <input type="password" name="confirmPassword" value={data.confirmPassword} onChange={valueHandler} onFocus={touchedHandler}/><br/>
-                                        {errors.confirmPassword && touched.confirmPassword && <span>{errors.confirmPassword}</span>} <br/>
-                                        
-                                    </li>
-                                    <li className="checkboxLi">
-                                        <label>accept terms of privacy:</label>
-                                        <input className="checkbox" type="checkbox" name="agreement" value={data.agreement} onClick={checkBoxHandler} onFocus={touchedHandler}/><br/>
-                                        {errors.agreementError && touched.agreement && <span>{errors.agreementError}</span>}
-                                        
-                                    </li>
-
-                                    <br/>
-
-                                    <li className="buttonLi">
-                                        <button className="signUpBtn" onClick={signUpHandler}>sign up</button>
-                                        <br/>
-                                        <br/>
-                                        
-                                        <p>already have an account?</p>
-                                        <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
-                                    </li>
-                                    <li>
-                                        <Link to="/">go to home page</Link>
-                                    </li>
-                                </ul>         */}
-                        </div>
                         </Col>
                 </Row>
 

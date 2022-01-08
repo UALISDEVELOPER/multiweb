@@ -30,16 +30,6 @@ const LogIn = ({setEmail, email ,history}) => {
     //catching errors from LogInValdation
     const [touched ,setTouched ] = useState({});
     //use setTouched to know if client has clicked on any input
-    const firstInput = useRef();
-
-    // const [userEmail, setUserEmail] = useState(false)
-
-    useEffect(()=>{
-        // document.title = "website name /log in";
-        // setting title of the page
-        firstInput.current.focus();
-        // focus on first input during componenet mounting
-    },[])
     
     useEffect(()=>{
         setErrors(validate(clientData));
@@ -124,71 +114,68 @@ const LogIn = ({setEmail, email ,history}) => {
                         </Col>
                         <Col md="auto">
                                 <div className="logInContainer">
-                                    <div>
-                                        <form>
-                                            <h1>log in</h1>
-                                            <div  className='formDiv'>
+                                    <h1>log in</h1>
+                                    <div  className='formDiv'>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label>email :</label>
+                                            </Col>
+                                            <Col sm={6}>
                                                 <Row>
-                                                    <Col sm={6}>
-                                                        <label>email :</label>
-                                                    </Col>
-                                                    <Col sm={6}>
-                                                        <Row>
-                                                            <input type="email" name="email" value={clientData.email} onChange={changeHandler} onFocus={touchHandler} ref={firstInput} />
-                                                        </Row>
-                                                        <Row>
-                                                            <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
-                                                        </Row>
-                                                    </Col>
+                                                    <input type="email" name="email" value={clientData.email} onChange={changeHandler} onFocus={touchHandler}/>
                                                 </Row>
                                                 <Row>
-                                                    <Col sm={6}>
-                                                        <label>password :</label>
-                                                    </Col>
-                                                    <Col sm={6}>
-                                                        <Row>
-                                                            <input type="password" name="password" value={clientData.password} onChange={changeHandler} onFocus={touchHandler}/>
-                                                        </Row>
-                                                        <Row>
-                                                            <span>{errors.password && touched.password && <p>{errors.password}</p>} </span>
-                                                        </Row>
-                                                    </Col>
+                                                    <span>{errors.email && touched.email && <p>{errors.email}</p>} </span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={6}>
+                                                <label>password :</label>
+                                            </Col>
+                                            <Col sm={6}>
+                                                <Row>
+                                                    <input type="password" name="password" value={clientData.password} onChange={changeHandler} onFocus={touchHandler}/>
                                                 </Row>
                                                 <Row>
-                                                    <Col xs={6}>
-                                                        <button onClick={logInHandler} className="logInBtn">log in</button>
-                                                    </Col>
-                                                    <Col xs={6}>
+                                                    <span>{errors.password && touched.password && <p>{errors.password}</p>} </span>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <button onClick={logInHandler} className="logInBtn">log in</button>
+                                            </Col>
+                                            <Col xs={6}>
 
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <Col xs={8}>
-                                                        <p>don't have an account?</p>
-                                                    </Col>
-                                                    <Col xs={4}>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={8}>
+                                                <p>don't have an account?</p>
+                                            </Col>
+                                            <Col xs={4}>
 
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <Col xs={6}>
-                                                        <Link to="/sign-in"><button className="signUpBtn">sign up</button></Link> 
-                                                    </Col>
-                                                    <Col xs={6}>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={6}>
+                                                <Link to="/sign-in"><button className="signUpBtn">sign up</button></Link> 
+                                            </Col>
+                                            <Col xs={6}>
 
-                                                    </Col>
-                                                </Row>
-                                                <Row>
-                                                    <Col xs={8}>
-                                                        <Link to="/">go to home page</Link>
-                                                    </Col>
-                                                    <Col xs={4}>
-                                                        
-                                                    </Col>
-                                                </Row>
-                                            </div>
-                                        </form>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col xs={8}>
+                                                <Link to="/">go to home page</Link>
+                                            </Col>
+                                            <Col xs={4}>
+                                                
+                                            </Col>
+                                        </Row>
                                     </div>
+                                       
                             </div>
                         </Col>
                 </Row>
