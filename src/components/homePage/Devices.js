@@ -14,19 +14,17 @@ import "./styles/devices.scss"
 
 const Devices = () => {
     return (
-        <div className='deviceDiv'>
-            <Row>
-                {/* <Col>
-                    <Image className='deviceImage' fluid src={devices} alt="devices"/>
-                </Col> */}
-                <Col className='deviceCol' md={8}>
-                    <Image className='deviceImage' fluid src={LapTop} alt="devices"/>
-                </Col>
-                <Col className='deviceCol' md={4}>
-                    <Image className='deviceImage' fluid src={Phone} alt="devices"/>
-                </Col>
-            </Row>
-        </div>
+        <Row className='deviceDiv'>
+            {/* <Col>
+                <Image className='deviceImage' fluid src={devices} alt="devices"/>
+            </Col> */}
+            <Col className='deviceCol' md={8}>
+                <Image className='deviceImage' fluid src={LapTop} alt="devices"/>
+            </Col>
+            <Col className='deviceCol' md={4}>
+                <Image className='deviceImage' fluid src={Phone} alt="devices"/>
+            </Col>
+        </Row>
     );
 };
 

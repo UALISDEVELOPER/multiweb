@@ -1,24 +1,41 @@
 .nav{
     background-color: #000000 !important;
+    a{
+        text-decoration: none;
+        color: white;
+    }
     .navBrand{
-        color: #0505ac;
-        
+        a{
+            text-decoration: none;
+            color: #020086;
+        } 
     }
     .pagesLink{
-        color: #ffffff !important;
+        a{
+            text-decoration: none;
+            color: white;
+        }
     }
     .pagesLink:hover{
-        color: #979797 !important;
+        a{
+            text-decoration: none;
+            color: #979797 !important;
+        }
     }
     .registerDiv{
         margin-top: 10px;
         // transition: all .5s;
         .logOutBtn{
-            color: #ff0000;
-            // transition: all .5s;
+            a{
+                text-decoration: none;
+                color: #dd0000;
+            }
         }
         .logOutBtn:hover{
-            color: #ff3434;
+            a{
+                text-decoration: none;
+                color: #ff3434;
+            }
         }
         p{
             float: left;
