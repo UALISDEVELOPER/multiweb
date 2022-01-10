@@ -17,24 +17,25 @@ import singInIcon from "./img/signinIcon/1x/signin.png"
 const WebNav = () => {
 
     const logOutHnadler = ()=>{
-        localStorage.clear();
+        // localStorage.clear();
+        localStorage.removeItem("USEREMAIL2")
     }
 
 
     return (
         <div>
-            <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+            {/* <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
                 <Container>
                     <Navbar.Brand className='navBrand'><Link to="/">Multi web</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link className='pagesLink'><Link to="/">Home</Link></Nav.Link>
-                            <Nav.Link className='pagesLink'><Link to="/crypto">Crypto</Link></Nav.Link>
-                            <Nav.Link className='pagesLink'><Link to="/weather">Weather</Link></Nav.Link>
+                            <Nav.Link className='pagesLink' href="#x"><Link to="/">Home</Link></Nav.Link>
+                            <Nav.Link className='pagesLink' href="#x"><Link to="/crypto">Crypto</Link></Nav.Link>
+                            <Nav.Link className='pagesLink' href="#x"><Link to="/weather">Weather</Link></Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link>
+                            <Nav.Link href="#x">
                                 <Link to="/sign-in">
                                     {JSON.parse(localStorage.getItem("USEREMAIL2")) ?
                                     <div className='registerDiv' onClick={logOutHnadler}>
@@ -60,21 +61,19 @@ const WebNav = () => {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>            
-
-            {/* <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
+            </Navbar>             */}
+            <Navbar className='nav' collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
                 <Container>
-                    <Navbar.Brand className='navBrand' ><Link to="/">Multi web</Link></Navbar.Brand>
+                    <Navbar.Brand className='navBrand'><Link to="/">Multi web</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Link to="/">Home</Link>
-                            <Link to="/crypto">Crypto</Link>
-                            <Link to="/weather">Weather</Link>
+                            <Nav.Link className='pagesLink' as={Link}  to="/">Home</Nav.Link>
+                            <Nav.Link className='pagesLink' as={Link}  to="/crypto">Crypto</Nav.Link>
+                            <Nav.Link className='pagesLink' as={Link}  to="/weather">Weather</Nav.Link>
                         </Nav>
                         <Nav>
-                            
-                                <Link to="/sign-in">
+                            <Nav.Link as={Link}  to="/sign-in">
                                     {JSON.parse(localStorage.getItem("USEREMAIL2")) ?
                                     <div className='registerDiv' onClick={logOutHnadler}>
                                         <img src={logOutIcon} alt="logout icon"/>
@@ -86,8 +85,7 @@ const WebNav = () => {
                                         <p>sign in/ log in</p>
                                     </div>
                                     }
-                                </Link>
-                            
+                            </Nav.Link>
                             {JSON.parse(localStorage.getItem("USEREMAIL2")) &&
                                 <Nav.Link className='userLink'>
                                     <div className='userDiv'>
@@ -99,7 +97,7 @@ const WebNav = () => {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>     */}
+            </Navbar>    
         </div>
     );
 };

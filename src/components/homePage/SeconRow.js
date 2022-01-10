@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //styles
 import "./styles/secondRow.scss"
@@ -20,7 +21,11 @@ const SeconRow = () => {
                 </Col>
                 <Col className='col' lg={6} >
                     <div className='paraDiv'>
-                        <p className='para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum at varius vel pharetra. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Nulla facilisi morbi tempus iaculis urna id volutpat. Augue lacus viverra vitae congue. Accusman tortor posuere ac ut consequat. Sed odio morbi quis commodo odio. Amet est placerat in egestas erat imperdiet. Molestie nunc non blandit massa enim nec dui. Gravida quis blandit turpis cursus in. Vehicula ipsum a arcu cursus vitae congue. Purus sit amet luctus venenatis lectus magna. </p>
+                        <h2>Crypto Curency ...</h2>
+                        <p className='para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum at varius vel pharetra. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Nulla facilisi consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum at varius vel pharetra. Nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi. Nulla facili morbi tempus iaculis urna id volutpat. Augue lacus viverra vitae congue. Accusman tortor posuere ac ut consequat. Sed odio morbi quis commodo odio. Amet est placerat in egestas erat imperdiet. Molestie nunc non blandit massa enim nec dui. Gravida quis blandit turpis cursus in. Vehicula ipsum a arcu cursus vitae congue. Purus sit amet luctus venenatis lectus magna. </p>
+                        <Link to="/crypto">
+                        <button>go to crypto table</button>
+                        </Link>
                     </div>
                 </Col>
         </Row>            

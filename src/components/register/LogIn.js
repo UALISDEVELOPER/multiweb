@@ -40,7 +40,9 @@ const LogIn = ({setEmail, email ,history}) => {
     useEffect(()=>{
         email &&  history.replace("/");
         // email && console.log(email);
-        email &&  localStorage.setItem("USEREMAIL2", JSON.stringify(email))
+        email &&  localStorage.setItem("USEREMAIL2", JSON.stringify(email));
+        
+        console.log(localStorage.getItem("USEREMAIL2"));
     })
     
     const changeHandler = event =>{
@@ -59,7 +61,7 @@ const LogIn = ({setEmail, email ,history}) => {
     }
     //by using this eventHandler we can know if client has focused on an input
 
-
+    
     const logInHandler = (event)=>{
         event.preventDefault();
         
@@ -76,7 +78,6 @@ const LogIn = ({setEmail, email ,history}) => {
                     .catch(error => fail(error.response.data.message))
                     .catch((error)=>console.log(error.response.data.message))
             // console.log("success");
-            console.log(localStorage.getItem("USEREMAIL2"));
         }else{
             // console.log("fail");
             fail("fill out the form");

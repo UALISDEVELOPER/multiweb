@@ -1,22 +1,38 @@
 
 .secondRow{
-    // background-color: #061bdb;
     background-color: #3D3F52;
     // margin-bottom: 40px;
     .col{
         .imgDiv{
-            width: 90%;
+            width: fit-content;
             margin: auto;
             img{
-                width: 90%;
+                width: auto;
                 margin: auto;
+                height: 500px;
             }
         }
         .paraDiv{
             padding: 40px;
+            h2{
+                color: #e2e1e1;
+            }
             .para{
                 color: #ffff;
-                font-size: 30px;
+                font-size: 20px;
+            }
+            button{
+                width: 250px;
+                height: 35px;
+                border: none;
+                border-radius: 15px;
+                background-color: #4949b8;
+                color: #ffffff;
+                transition: all .5s;
+            }
+            button:hover{
+                background-color: #1d1d64;
+                width: 300px;
             }
         }
     }
