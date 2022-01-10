@@ -11,12 +11,11 @@ import SingInForm from './components/register/SingInForm';
 import "./app.scss"
 
 const App = () => {
-  const [email , setEmail]= useState("");
 
   return (
     <div >
       <Switch>
-        <Route path="/log-in" render={props => <LogIn setEmail={setEmail} email={email}  {...props}/>} />
+        <Route path="/log-in" component={LogIn}/>
         <Route path="/sign-in" component={SingInForm} />
         <Route path="/" component={Landing} />
       </Switch>

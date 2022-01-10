@@ -17,10 +17,10 @@ import loginIllustrations from "./styles/img/login.gif"
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import {Image, Container, Row, Col, Spinner} from 'react-bootstrap';
 
 
-const LogIn = ({setEmail, email ,history}) => {
+const LogIn = ({history}) => {
     const [clientData, setClientData]= useState({
         email:"",
         password : "",
@@ -31,6 +31,11 @@ const LogIn = ({setEmail, email ,history}) => {
     const [touched ,setTouched ] = useState({});
     //use setTouched to know if client has clicked on any input
     
+    const [storageEmail , setStorageEmail] = useState("")
+
+    //-----------
+    // const [serverResponse , setServerResponse] = useState({})
+
     useEffect(()=>{
         setErrors(validate(clientData));
         
@@ -38,12 +43,9 @@ const LogIn = ({setEmail, email ,history}) => {
     },[clientData])
 
     useEffect(()=>{
-        email &&  history.replace("/");
-        // email && console.log(email);
-        email &&  localStorage.setItem("USEREMAIL2", JSON.stringify(email));
-        
-        console.log(localStorage.getItem("USEREMAIL2"));
-    })
+        storageEmail &&  localStorage.setItem("USEREMAIL2", JSON.stringify(storageEmail));
+        storageEmail.includes("@") && history.replace("/");
+    },[storageEmail])
     
     const changeHandler = event =>{
         setClientData({
@@ -64,7 +66,7 @@ const LogIn = ({setEmail, email ,history}) => {
     
     const logInHandler = (event)=>{
         event.preventDefault();
-        
+        setStorageEmail("sending data")
         const logInData ={
             email: clientData.email,
             password : clientData.password,
@@ -72,28 +74,14 @@ const LogIn = ({setEmail, email ,history}) => {
 
         if( !(errors.email || errors.password ) ){
             axios.post("https://api.freerealapi.com/auth/login", logInData)
-                    // .then(response => console.log(response))
-                    .then(response=>setEmail(JSON.parse(response.config.data).email))
-                    // .catch((error)=>setErrors({...errors, serverError: error.response.data.message}))
-                    .catch(error => fail(error.response.data.message))
-                    .catch((error)=>console.log(error.response.data.message))
-            // console.log("success");
+                    .then(response=> response.data.success && setStorageEmail(JSON.parse(response.config.data).email))
+                    .catch(error => setStorageEmail(error.response.data.message))
         }else{
-            // console.log("fail");
             fail("fill out the form");
+            setStorageEmail("fill out the form")
         }
     }
     //logInHandler will check that if there is no error to send the data to server
-
-    // const successed = () => toast.success('loged in seccussfully', {
-    //     position: "top-right",
-    //     autoClose: 5000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    // });
 
     const fail =(message)=>toast.error(message, {
         position: "top-right",
@@ -107,7 +95,12 @@ const LogIn = ({setEmail, email ,history}) => {
 
     return (
         <Container fluid="md">
-                <Row className="justify-content-md-center">
+                <Row className="justify-content-center">
+                        {storageEmail==="sending data" && 
+                            <div className='spinnerDiv'>
+                                <Spinner variant="primary" animation="grow" className='spinner' />
+                            </div>
+                        }
                         <Col md="auto">
                             <div className='imageDiv'>
                                 <Image fluid className='image' src={loginIllustrations} alt="log in "/>
@@ -148,7 +141,7 @@ const LogIn = ({setEmail, email ,history}) => {
                                                 <button onClick={logInHandler} className="logInBtn">log in</button>
                                             </Col>
                                             <Col xs={6}>
-
+                                                {storageEmail !== "sending data" && <p className='warning'>{storageEmail}</p>}
                                             </Col>
                                         </Row>
                                         <Row>

@@ -12,13 +12,13 @@ import { validate } from './SignInValidate';
 
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Image, Container, Row, Col} from 'react-bootstrap';
+import {Image, Container, Row, Col, Spinner} from 'react-bootstrap';
 
 //images
 import signupIllustrations from "./styles/img/Signup.gif"
 
 
-const SingInForm = () => {
+const SingInForm = ({history}) => {
 
     const [data , setData]= useState({
         name:"",
@@ -30,28 +30,23 @@ const SingInForm = () => {
     })
     //gotten data from client up to here
 
-    // const [responseMessages, setResponseMessages] = useState({
-    //     message:"",
-    // });
 
     const [errors , setErrors] = useState({})
     //catching errors from SignInValdation
     const [touched , setTouched] = useState({})
     //use setTouched to know if client has clicked on any input
-    //------------------------------------------------
 
-    // const nameInputRef = useRef();
-    // useEffect(()=>{
-    //     // document.title = "website name /sign up";
-    //     // setting title of the page
-    //     nameInputRef.current.focus();
-    //     // focus on first input during componenet mounting
-    // },[])
+    const [serverResponse , setServerResponse] = useState("")
     
     useEffect(()=>{
         setErrors(validate(data));
         //validation 
     },[data])
+
+    useEffect(()=>{
+        serverResponse.includes("@") && successed("you signedup successfuly");
+        serverResponse.includes("@") && history.replace("/log-in");
+    },[serverResponse])
 
 
     const valueHandler = event =>{
@@ -83,7 +78,7 @@ const SingInForm = () => {
     const signUpHandler = (event)=>{
         event.preventDefault();
 
-        // console.log(sendingData);
+        setServerResponse("sending data")
 
         const signUpData ={
             name : data.name,
@@ -93,20 +88,19 @@ const SingInForm = () => {
 
         if( !(errors.name || errors.email || errors.password || errors.confirmPassword || errors.agreementError) ){
             axios.post("https://api.freerealapi.com/auth/register", signUpData)
-                    // .then(response => console.log(response.data.message))
-                    // .then(response=>  successed(response.data.message))
-                    .then(response=>  response.data.message==="Your account has ben created successfully"&& successed("Your account has been created successfully and you can logIn to your account now"))
-                    // .then(response => console.log(response.data))
-
-                    .catch((error)=> fail( error.response.data.message))
-                    // .catch((error)=>console.log(error.response.data.message))
-            // console.log("success") ;
+                    .then( response=> response.data.success && setServerResponse(JSON.parse(response.config.data).email))
+                    .catch((error)=> setServerResponse( error.response.data.message))
         }else{
-            // console.log("fail");
             fail("fill out the form")
+            setServerResponse("fill out the form")
         }
     }
     //signInHandler will check that if there is no error to send the data to server
+
+    const logOutHnadler = ()=>{
+        // localStorage.clear();
+        localStorage.removeItem("USEREMAIL2")
+    }
 
     const successed = (message) => toast.success(message, {
         position: "top-right",
@@ -132,6 +126,11 @@ const SingInForm = () => {
     return (
         <Container fluid="md">
             <Row className="justify-content-md-center">
+                        {serverResponse==="sending data" && 
+                            <div className='spinnerDiv'>
+                                <Spinner variant="primary" animation="grow" className='spinner' />
+                            </div>
+                        }
                         <Col md="auto">
                             <div className='imageDiv'>
                                 <Image fluid className='image' src={signupIllustrations} alt="log in "/>
@@ -211,7 +210,7 @@ const SingInForm = () => {
                                                 <button className="signUpBtn" onClick={signUpHandler}>sign up</button>
                                             </Col>
                                             <Col xs={6}>
-
+                                                {serverResponse !== "sending data" && <p className='warning'>{serverResponse}</p>}
                                             </Col>
                                         </Row>
                                         <Row>
@@ -224,7 +223,7 @@ const SingInForm = () => {
                                         </Row>
                                         <Row>
                                             <Col xs={6}>
-                                                <Link to="/log-in"><button  className="logInBtn">log in</button></Link> 
+                                                <Link to="/log-in" onClick={logOutHnadler}><button  className="logInBtn">log in</button></Link> 
                                             </Col>
                                             <Col xs={6}>
 
