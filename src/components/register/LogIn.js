@@ -43,8 +43,8 @@ const LogIn = ({history}) => {
     },[clientData])
 
     useEffect(()=>{
-        storageEmail &&  localStorage.setItem("USEREMAIL2", JSON.stringify(storageEmail));
-        storageEmail.includes("@") && history.replace("/");
+        storageEmail.includes("@") &&  localStorage.setItem("USEREMAIL2", JSON.stringify(storageEmail));
+        storageEmail.includes("@" || ".") && history.replace("/");
     },[storageEmail])
     
     const changeHandler = event =>{
