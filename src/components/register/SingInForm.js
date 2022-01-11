@@ -125,7 +125,7 @@ const SingInForm = ({history}) => {
     //JSX down here
     return (
         <Container fluid="md">
-            <Row className="justify-content-md-center">
+            <Row className="justify-content-center">
                         {serverResponse==="sending data" && 
                             <div className='spinnerDiv'>
                                 <Spinner variant="primary" animation="grow" className='spinner' />
